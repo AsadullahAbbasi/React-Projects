@@ -3,7 +3,7 @@ import "./Display.css";
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [slides, setSlides] = useState([
+  const [slides, ] = useState([
     {
       image:
         "src/images/johan_343_vogue_photoshoot_of_beautiful_blonde_long_curl_haired_d153ef32-7f9f-42ce-9a4f-59b4d68be101.png",
@@ -30,9 +30,6 @@ const Slider = () => {
     setCurrentSlide((currentSlide - 1 + slides.length) % slides.length);
   };
 
-  const handleDotClick = (index: number) => {
-    setCurrentSlide(index);
-  };
 
   return (
     <div className="slider container-fuild">
@@ -53,15 +50,6 @@ const Slider = () => {
         <button className="next" onClick={handleNextSlide}>
           <i className="fa-solid fa-arrow-right"></i>
         </button>
-      </div>
-      <div className="dots">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`dot ${index === currentSlide ? "active" : ""}`}
-            onClick={() => handleDotClick(index)}
-          />
-        ))}
       </div>
     </div>
   );
