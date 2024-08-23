@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import "./SignIn.css";
 import { Link } from "react-router-dom";
-import React from "react";
+
 type Inputs = {
   children: React.ReactNode;
 
@@ -12,7 +12,6 @@ const SignIn = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) =>

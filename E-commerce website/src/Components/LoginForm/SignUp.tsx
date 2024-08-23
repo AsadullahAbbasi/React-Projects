@@ -3,7 +3,7 @@ import "./SignIn.css";
 import { useForm, SubmitHandler } from "react-hook-form";
 import "./SignIn.css";
 import { Link } from "react-router-dom";
-import SignIn from "./SignIn";
+
 type Inputs = {
   firstName: string;
   lastName: string;
@@ -14,7 +14,7 @@ const SignUp = () => {
   const {
     register,
     handleSubmit,
-    watch,
+
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) =>
